@@ -1,0 +1,127 @@
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;                
+    min-height: 100vh;
+    max-width: 400px;
+    max-height: 600px;   
+    background:black;
+}
+#inpt_login-email{
+    border-radius: 5px;
+    padding: 5px;
+    height: 25px;
+      min-height:40px;
+    width: 100%;
+}
+#inpt_login-pass{
+    border-radius: 5px;
+    padding: 5px;
+    height: 25px;
+    min-height:40px;
+    width: 100%;  
+}
+
+#Submit_button{
+    border-radius: 5px;
+    padding: 5px;
+    height: 25px;
+   
+}
+
+#login_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2px;
+  
+}
+
+#login_box h5{
+    margin:0px;
+    margin-bottom:5px;
+    text-decoration: none;
+   
+}
+
+#header_title{
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    font-weight: 600;
+}
+
+#sign_up{
+    text-decoration: none;
+    background: whitesmoke;
+    color: black;
+    height: 28px;
+    width: 350px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 99999px;
+    padding-top: 9px;
+}
+
+#Submit_button{
+    font-size: 16px;
+    text-decoration: none;
+    background: whitesmoke;
+    color: black;
+    height: 40px;
+    width: 350px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 99999px;
+    padding-top: 5px;
+}
+
+#Submit_button{
+    cursor: pointer;
+}
+#login-email label{
+    position: absolute;
+    top:243px;
+    left:120px;
+    font-size: 15px;
+    transition: 0.3s;
+    color:gray;
+}
+
+#login-email input:focus + label,
+#login-email input:not(:placeholder-shown)+label
+{
+    top:225px;
+    font-size: x-small;
+    transition: 0.3s;
+    color:rgb(17, 118, 225);
+}
+#login-email input:not(:focus) + label{
+    color: gray;
+}
+
+
+#login-pass label{
+    position: absolute;
+    top:300px;
+    left:120px;
+    font-size: 15px;
+    transition: 0.3s;
+    background: auto;
+    color:gray;
+}
+#login-pass input:focus + label,
+#login-pass input:not(:placeholder-shown) + label
+{
+    top:288px;
+    font-size: x-small;
+    transition: 0.3s;
+      background: auto;
+      color:rgb(17, 118, 225);
+}
+#login-pass input:not(:focus) + label{
+    color: gray;
+}

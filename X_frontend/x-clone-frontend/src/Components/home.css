@@ -1,0 +1,36 @@
+#wlcm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+#user-page{
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+#nav-1{
+    text-decoration: none;
+    margin: 5px;
+   height: 25px;
+   width: 120px;
+   text-align: center;
+   padding-top: 5px;
+   background:linear-gradient(to right, rgb(255, 254, 254) ,black );
+    backdrop-filter: blur(10px);
+   color:black;
+   transition: 0.5s;
+   border-radius: 5px;
+}
+
+#home{
+    font-weight: 500;
+    
+}

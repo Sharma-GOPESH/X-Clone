@@ -4,8 +4,10 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 import jwt
 from datetime import datetime, timezone , timedelta
 import os
-from fastapi import HTTPException
+from fastapi import HTTPException , Depends
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from dotenv import load_dotenv
+import time
 
 load_dotenv()
 
@@ -33,7 +35,11 @@ def create_jwt_token(Data:dict):
     return jwt.encode(copy_data, Secret_key , algorithm=Algorithm)
 
 
-def verify_token(token :str) -> str:
+security = HTTPBearer()
+def verify_token(creds: HTTPAuthorizationCredentials = Depends(security)):
+    token = creds.credentials
+    if not token:
+        raise HTTPException(status_code=402, detail="You have to sign in or sign up")
     try:
         payload = jwt.decode(token,Secret_key,algorithms=[Algorithm])
         return payload["sub"]

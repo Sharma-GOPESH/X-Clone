@@ -1,0 +1,90 @@
+#feed{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+#search-icon{
+    position: relative;
+    top:35px;
+    left: 15px;
+    height:25px ;
+    width:auto;
+    background: whitesmoke;
+    
+}
+#All_posts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    gap: 10px;
+}
+
+#header label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+#line{
+    width:100%;
+}
+
+.post{ 
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid gray;
+    border-radius: 15px;
+    gap:10px;
+    width: fit-content;
+    min-width: 350px;       
+    max-width: 600px;       
+    box-sizing: border-box;
+    padding: 5px;
+}
+div.username{
+      display: flex;
+    justify-content: flex-start;
+    position: relative;
+    left:10px;
+    font-size: small;
+    color: gray;
+    width: fit-content;
+ 
+}
+
+div.post_body{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    left:10px;
+     width: fit-content;
+}
+
+div.like{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    font-size: small;
+    width: fit-content;
+    left:10px;
+}
+
+div.posting_time{
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    left: 10px;
+    font-size: small;
+    width: fit-content;
+  
+}
+#search input{
+    position: relative;
+
+}

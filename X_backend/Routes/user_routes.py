@@ -1,7 +1,7 @@
 
-from pydantic import BaseModel,Field , field_validator, model_validator,computed_field ,  EmailStr 
-from typing import List , Dict , Optional , Annotated , Literal
-from fastapi import FastAPI , Path,HTTPException,Query , APIRouter
+from pydantic import BaseModel,Field ,  EmailStr 
+from typing import  Annotated
+from fastapi import FastAPI , Path,HTTPException,Query , APIRouter , Depends
 from fastapi.responses import JSONResponse
 import json
 from datetime import datetime, timezone , timedelta
@@ -52,6 +52,18 @@ def load_user_profile_data():
 
 
 router = APIRouter()
+
+@router.get("/")
+def start():
+   return "Love you"
+
+@router.get("/feed")
+def home_feed(user = Depends(verify_token)):
+     cur.execute("""SELECT * FROM post_data""")
+     all_posts = cur.fetchall()
+     return all_posts
+
+
 #endpoint to register new user
 @router.post("/users")
 def Add_user(new_user : user):
@@ -93,8 +105,8 @@ def user_login(login_details : Delete_User):
         raise HTTPException(status_code=401, detail="invalid credentials")
     
     cur.execute("""SELECT username FROM user_data WHERE email_id = (%s) """,(login_details.email,))
-    user_name = cur.fetchone()
-    login_token = create_jwt_token({"sub":user_name})
+    user_name = cur.fetchone() #it returns a dict 
+    login_token = create_jwt_token({"sub":user_name["username"]})
     return login_token
      
 @router.delete("/delete")
